@@ -60,7 +60,7 @@ class PayoutFacade
     /**
      * @var DateTime $operationDate
      * @SerializedName("OperationDate")
-     * @Type("DateTime<'Y-m-d\TH:i:s'>")
+     * @Type("DateTime<'Y-m-d\TH:i:s.uP'>")
      */
     public $operationDate;
 
