@@ -31,7 +31,7 @@ class PayoutFacade
 
     /**
      * @var SubAccountRefFacade $subAccountRef
-     * @SerializedName("SubAccountRef")
+     * @SerializedName("AccountId")
      * @Type("Smoney\Smoney\Facade\SubAccountRefFacade")
      */
     public $subAccountRef;
