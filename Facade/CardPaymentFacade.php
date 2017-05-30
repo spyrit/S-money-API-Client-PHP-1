@@ -27,7 +27,7 @@ class CardPaymentFacade
     /**
      * @var DateTime $paymentDate
      * @SerializedName("PaymentDate")
-     * @Type("DateTime<'Y-m-d\TH:i:s'>")
+     * @Type("DateTime<'Y-m-d\TH:i:s+'>")
      */
     public $paymentDate;
 
@@ -65,7 +65,7 @@ class CardPaymentFacade
      * @Type("string")
      */
     public $message;
-    
+
     /**
      * @var string $href
      * @SerializedName("Href")

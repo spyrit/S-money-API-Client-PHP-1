@@ -48,7 +48,7 @@ class CardFacade
     /**
      * @var DateTime $expiryDate
      * @SerializedName("ExpiryDate")
-     * @Type("DateTime<'Y-m-d\TH:i:s'>")
+     * @Type("DateTime<'Y-m-d\TH:i:s+'>")
      */
     public $expiryDate;
 }

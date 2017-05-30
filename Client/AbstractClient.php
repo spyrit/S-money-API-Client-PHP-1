@@ -5,7 +5,6 @@ namespace Smoney\Smoney\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use JMS\Serializer\SerializerInterface;
-use Psr\Http\Message\ResponseInterface;
 use Smoney\Smoney\Client\SmoneyException;
 
 /**

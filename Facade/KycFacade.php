@@ -21,7 +21,7 @@ class KycFacade
     /**
      * @var DateTime $requestDate
      * @SerializedName("RequestDate")
-     * @Type("DateTime<'Y-m-d\TH:i:s'>")
+     * @Type("DateTime<'Y-m-d\TH:i:s+'>")
      */
     public $requestDate;
 

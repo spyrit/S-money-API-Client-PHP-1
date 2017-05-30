@@ -48,7 +48,7 @@ class SubAccountFacade
     /**
      * @var DateTime $created_at
      * @SerializedName("CreationDate")
-     * @Type("DateTime<'Y-m-d\TH:i:s'>")
+     * @Type("DateTime<'Y-m-d\TH:i:s+'>")
      */
     public $created_at;
 }

@@ -91,17 +91,17 @@ $cardPaymentClient = new CardPaymentClient(
     new Client(),
     SerializerBuilder::create()->build()
 );
-```    
+```
 #### Simple Payment
 ```php
 $cardPayment = new CardPaymentFacade();
 
 $cardPayment->urlReturn = 'http://callback_after_payment.com';
 $cardPayment->amount = 2;
-$cardPayment->beneficiary = new subAccountFacade();
+$cardPayment->beneficiary = new SubAccountRefFacade();
 $cardPayment->beneficiary->appAccountId = 'client-112';
 
-$cardPaymentClient->create($cardPayment);
+$cardPaymentClient->create($appUserId, $cardPayment);
 ```
 
 #### Multiple beneficiaries
