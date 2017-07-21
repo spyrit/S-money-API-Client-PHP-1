@@ -13,7 +13,7 @@ class PaymentClient extends AbstractClient
     /**
      * @param string $appUserId
      * @param int    $orderId
-     * 
+     *
      * @return PaymentFacade
      */
     public function get($appUserId, $orderId)
@@ -26,7 +26,7 @@ class PaymentClient extends AbstractClient
 
     /**
      * @param string $appUserId
-     * 
+     *
      * @return ArrayCollection
      */
     public function index($appUserId)
@@ -34,13 +34,13 @@ class PaymentClient extends AbstractClient
         $uri = 'users/'.$appUserId.'/payments';
         $res = $this->action('GET', $uri);
 
-        return $this->serializer->deserialize($res, 'ArrayCollection<Smoney\Smoney\Facade\BankAccountFacade>', 'json');
+        return $this->serializer->deserialize($res, 'ArrayCollection<Smoney\Smoney\Facade\PaymentFacade>', 'json');
     }
 
     /**
      * @param string        $appUserId
      * @param PaymentFacade $payment
-     * 
+     *
      * @return PaymentFacade
      */
     public function create($appUserId, PaymentFacade $payment)
