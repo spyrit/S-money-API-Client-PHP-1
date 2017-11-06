@@ -1,7 +1,9 @@
 <?php
 
 namespace Smoney\Smoney\Client;
+
 use Smoney\Smoney\Facade\CardFacade;
+use Smoney\Smoney\Facade\UserCardRegistrationResultFacade;
 
 /**
  * Class CardClient
@@ -28,5 +30,17 @@ class CardClient extends AbstractClient
         $res = $this->action('GET', $uri);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\CardFacade', 'json');
+    }
+
+    /**
+     * @param $appCardId
+     * @return UserCardRegistrationResultFacade
+     */
+    public function getCardRegistrationResult($appCardId)
+    {
+        $uri = 'cards/registrations/'.$appCardId;
+        $res = $this->action('GET', $uri);
+
+        return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\UserCardRegistrationResultFacade', 'json');
     }
 }

@@ -13,4 +13,25 @@ class UserCardRegistrationResultFacade
      * @Type("string")
      */
     public $href;
+
+    /**
+     * @var int $status
+     * @SerializedName("Status")
+     * @Type("integer")
+     */
+    public $status;
+
+    /**
+     * @var int $errorCode
+     * @SerializedName("ErrorCode")
+     * @Type("integer")
+     */
+    public $errorCode;
+
+    /**
+     * @var ExtraResultsFacade $extraResults
+     * @SerializedName("ExtraResults")
+     * @Type("Smoney\Smoney\Facade\ExtraResultsFacade")
+     */
+    public $extraResults;
 }
