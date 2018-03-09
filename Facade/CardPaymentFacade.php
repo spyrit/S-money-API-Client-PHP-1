@@ -41,7 +41,7 @@ class CardPaymentFacade
     /**
      * @var FeeFacade $fee
      * @SerializedName("Fee")
-     * @Type("Smoney\Smoney\Facade\FeeFacade")
+     * @Type("integer")
      */
     public $fee;
 
@@ -135,6 +135,13 @@ class CardPaymentFacade
      * @Type("ArrayCollection<Smoney\Smoney\Facade\PaymentScheduleFacade>")
      */
     public $paymentSchedule;
+
+    /**
+     * @var PaymentScheduleeFacade $schedules
+     * @SerializedName("Schedules")
+     * @Type("ArrayCollection<Smoney\Smoney\Facade\PaymentScheduleFacade>")
+     */
+    public $schedules;
 
     /**
      * @var PaymentsCollectionFacade $payments

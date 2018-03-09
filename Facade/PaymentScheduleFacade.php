@@ -27,7 +27,7 @@ class PaymentScheduleFacade
     /**
      * @var DateTime $date
      * @SerializedName("Date")
-     * @Type("DateTime<'Y-m-d\TH:i:s+'>")
+     * @Type("DateTime<'Y-m-d\TH:i:s'>")
      */
     public $date;
 
