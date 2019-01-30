@@ -42,13 +42,38 @@ abstract class AbstractClient
      */
     public function __construct($baseUrl, $token, $version, ClientInterface $httpClient, SerializerInterface $serializer)
     {
-        $this->baseUrl = $baseUrl;
-        $this->headers = [
-            'Authorization' => 'Bearer '. $token .''
-        ];
+        $this->setBaseUrl($baseUrl);
+        $this->setToken($token);
         $this->setVersion($version);
         $this->httpClient = $httpClient;
         $this->serializer = $serializer;
+    }
+
+    /**
+     * @param string $baseUrl
+     *
+     * @return $this
+     */
+    public function setBaseUrl($baseUrl)
+    {
+        $this->baseUrl = $baseUrl;
+
+        return $this;
+    }
+
+    /**
+     * @param string $token
+     *
+     * @return $this
+     */
+    public function setToken($token)
+    {
+        if (!is_array($this->headers)) {
+            $this->headers = [];
+        }
+        $this->headers['Authorization'] = 'Bearer '. $token .'';
+
+        return $this;
     }
 
     /**
