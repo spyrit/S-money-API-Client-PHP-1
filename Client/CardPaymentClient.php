@@ -129,17 +129,18 @@ class CardPaymentClient extends AbstractClient
 
     /**
      * @param string $originalOrderId
+     * @param string $newOrderId
      * @param string $sequenceNumber
      * @param int    $amount
      * @param int    $fee
      *
      * @return CardPaymentFacade
      */
-    public function refundOneSequence($originalOrderId, $sequenceNumber, $amount, $fee = 0)
+    public function refundOneSequence($originalOrderId, $newOrderId, $sequenceNumber, $amount, $fee = 0)
     {
         $uri = 'payins/cardpayments/'.$originalOrderId.'/'.$sequenceNumber.'/refunds';
 
-        return $this->baseRefund($uri, $originalOrderId, $amount, $fee);
+        return $this->baseRefund($uri, $newOrderId, $amount, $fee);
     }
 
     /**
