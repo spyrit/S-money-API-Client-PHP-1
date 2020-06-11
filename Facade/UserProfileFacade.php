@@ -62,6 +62,13 @@ class UserProfileFacade
     public $alias;
 
     /**
+     * @var string $cspcode
+     * @SerializedName("CSPCode")
+     * @Type("string")
+     */
+    public $cspcode;
+
+    /**
      * @var AdresseFacade $address
      * @SerializedName("Address")
      * @Type("Smoney\Smoney\Facade\AddressFacade")
