@@ -4,79 +4,77 @@ namespace Smoney\Smoney\Facade;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Smoney\Smoney\Facade\AddressFacade;
-use Smoney\Smoney\Facade\PhotoRefFacade;
 
 /**
- * Class UserProfileFacade
+ * Class UserProfileFacade.
  */
 class UserProfileFacade
 {
     /**
-     * @var int $civility
+     * @var int
      * @SerializedName("Civility")
      * @Type("integer")
      */
     public $civility;
 
     /**
-     * @var string $firstName
+     * @var string
      * @SerializedName("FirstName")
      * @Type("string")
      */
     public $firstName;
 
     /**
-     * @var string $lastName
+     * @var string
      * @SerializedName("LastName")
      * @Type("string")
      */
     public $lastName;
 
     /**
-     * @var DateTime $birthdate
+     * @var DateTime
      * @SerializedName("Birthdate")
      * @Type("DateTime<'Y-m-d\TH:i:s'>")
      */
     public $birthdate;
 
     /**
-     * @var string $phoneNumber
+     * @var string
      * @SerializedName("PhoneNumber")
      * @Type("string")
      */
     public $phoneNumber;
 
     /**
-     * @var string $email
+     * @var string
      * @SerializedName("Email")
      * @Type("string")
      */
     public $email;
 
     /**
-     * @var string $alias
+     * @var string
      * @SerializedName("Alias")
      * @Type("string")
      */
     public $alias;
 
     /**
-     * @var string $cspcode
+     * @var string
      * @SerializedName("CSPCode")
      * @Type("string")
      */
     public $cspcode;
 
     /**
-     * @var AdresseFacade $address
+     * @var AddressFacade
      * @SerializedName("Address")
      * @Type("Smoney\Smoney\Facade\AddressFacade")
      */
     public $address;
 
-     /**
-     * @var PhotoRefFacade $photoRef
+    /**
+     * @var PhotoRefFacade
      * @SerializedName("Picture")
      * @Type("Smoney\Smoney\Facade\PhotoRefFacade")
      */

@@ -6,13 +6,12 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class PayinFacadeAccountId
- * @package Smoney\Smoney\Facade
+ * Class PayinFacadeAccountId.
  */
 class PayinAccountIdFacade
 {
     /**
-     * @var string $appAccountId
+     * @var string
      * @SerializedName("AppAccountId")
      * @Type("string")
      */

@@ -6,33 +6,33 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class AddressFacade
+ * Class AddressFacade.
  */
 class AddressFacade
 {
     /**
-     * @var string $street
+     * @var string
      * @SerializedName("Street")
      * @Type("string")
      */
     public $street;
 
     /**
-     * @var string $zipCode
+     * @var string
      * @SerializedName("ZipCode")
      * @Type("string")
      */
     public $zipCode;
 
     /**
-     * @var string $city
+     * @var string
      * @SerializedName("City")
      * @Type("string")
      */
     public $city;
 
     /**
-     * @var string $country
+     * @var string
      * @SerializedName("Country")
      * @Type("string")
      */

@@ -4,6 +4,7 @@ namespace Smoney\Smoney\Facade;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Class CardPaymentFacade
@@ -39,7 +40,7 @@ class CardPaymentFacade
     public $amount;
 
     /**
-     * @var FeeFacade $fee
+     * @var int $fee
      * @SerializedName("Fee")
      * @Type("integer")
      */
@@ -130,21 +131,21 @@ class CardPaymentFacade
     public $card;
 
     /**
-     * @var PaymentScheduleFacade $paymentSchedule
+     * @var ArrayCollection<PaymentScheduleFacade> $paymentSchedule
      * @SerializedName("PaymentSchedule")
      * @Type("ArrayCollection<Smoney\Smoney\Facade\PaymentScheduleFacade>")
      */
     public $paymentSchedule;
 
     /**
-     * @var PaymentScheduleeFacade $schedules
+     * @var ArrayCollection<PaymentScheduleFacade> $schedules
      * @SerializedName("Schedules")
      * @Type("ArrayCollection<Smoney\Smoney\Facade\PaymentScheduleFacade>")
      */
     public $schedules;
 
     /**
-     * @var PaymentsCollectionFacade $payments
+     * @var ArrayCollection<PaymentFacade> $payments
      * @SerializedName("Payments")
      * @Type("ArrayCollection<Smoney\Smoney\Facade\PaymentFacade>")
      */

@@ -2,17 +2,15 @@
 
 namespace Smoney\Smoney\Client;
 
-use Smoney\Smoney\Client\AbstractClient;
+use Doctrine\Common\Collections\ArrayCollection;
 use Smoney\Smoney\Facade\CardPaymentFacade;
 
 /**
- * Class CardPaymentClient
+ * Class CardPaymentClient.
  */
 class CardPaymentClient extends AbstractClient
 {
     /**
-     * @param CardPaymentFacade $payment
-     *
      * @return CardPaymentFacade
      */
     public function create(CardPaymentFacade $payment)
@@ -25,8 +23,7 @@ class CardPaymentClient extends AbstractClient
     }
 
     /**
-     * @param CardPaymentFacade $payment
-     * @param string            $appUserId
+     * @param string $appUserId
      *
      * @return CardPaymentFacade
      */
@@ -53,8 +50,6 @@ class CardPaymentClient extends AbstractClient
     }
 
     /**
-     * @param CardPaymentFacade $payment
-     *
      * @return CardPaymentFacade
      */
     public function createSofort(CardPaymentFacade $payment)
@@ -104,7 +99,7 @@ class CardPaymentClient extends AbstractClient
         $refund = [
             'orderId' => $orderId,
             'amount' => $amount,
-            'fee' => $fee
+            'fee' => $fee,
         ];
         $body = $this->serializer->serialize($refund, 'json');
         $res = $this->action('POST', $uri, ['body' => $body]);
@@ -146,7 +141,6 @@ class CardPaymentClient extends AbstractClient
     /**
      * @param string $originalOrderId
      * @param string $sequenceNumber
-     * @param CardPaymentFacade $cardPayment
      *
      * @return CardPaymentFacade
      */
@@ -154,7 +148,7 @@ class CardPaymentClient extends AbstractClient
     {
         $uri = 'payins/cardpayments/'.$originalOrderId.'/'.$sequenceNumber;
         $body = $this->serializer->serialize($cardPayment, 'json');
-        $res = $this->action('PUT', $uri, ['body'=>$body]);
+        $res = $this->action('PUT', $uri, ['body' => $body]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\CardPaymentFacade', 'json');
     }
@@ -174,7 +168,6 @@ class CardPaymentClient extends AbstractClient
 
         return $this->baseRefund($uri, $newOrderId, $amount, $fee);
     }
-
 
     /**
      * @param string $orderIdGlobal

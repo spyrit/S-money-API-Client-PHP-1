@@ -6,19 +6,19 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class PayerInfoFacade
+ * Class PayerInfoFacade.
  */
 class PayerInfoFacade
 {
     /**
-     * @var string $name
+     * @var string
      * @SerializedName("Name")
      * @Type("string")
      */
     public $name;
 
     /**
-     * @var string $mail
+     * @var string
      * @SerializedName("Mail")
      * @Type("string")
      */

@@ -6,12 +6,12 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class PhotoRefFacade
+ * Class PhotoRefFacade.
  */
 class PhotoRefFacade
 {
     /**
-     * @var string $href
+     * @var string
      * @SerializedName("Href")
      * @Type("string")
      */

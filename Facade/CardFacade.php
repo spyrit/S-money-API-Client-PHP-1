@@ -6,47 +6,47 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class CardFacade
+ * Class CardFacade.
  */
 class CardFacade
 {
     /**
-     * @var int $id
+     * @var int
      * @SerializedName("Id")
      * @Type("integer")
      */
     public $id;
 
     /**
-     * @var string $appCardId
+     * @var string
      * @SerializedName("AppCardId")
      * @Type("string")
      */
     public $appCardId;
 
     /**
-     * @var string $name
+     * @var string
      * @SerializedName("Name")
      * @Type("string")
      */
     public $name;
 
     /**
-     * @var string $hint
+     * @var string
      * @SerializedName("Hint")
      * @Type("string")
      */
     public $hint;
 
     /**
-     * @var string $country
+     * @var string
      * @SerializedName("Country")
      * @Type("string")
      */
     public $country;
 
     /**
-     * @var DateTime $expiryDate
+     * @var DateTime
      * @SerializedName("ExpiryDate")
      * @Type("DateTime<'Y-m-d\TH:i:s+'>")
      */

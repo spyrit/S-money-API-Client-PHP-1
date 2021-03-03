@@ -6,19 +6,19 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class ExtraParametersFacade
+ * Class ExtraParametersFacade.
  */
 class ExtraParametersFacade
 {
     /**
-     * @var string $reference
+     * @var string
      * @SerializedName("Reference")
      * @Type("string")
      */
     public $reference;
 
     /**
-     * @var string $motif
+     * @var string
      * @SerializedName("Motif")
      * @Type("string")
      */

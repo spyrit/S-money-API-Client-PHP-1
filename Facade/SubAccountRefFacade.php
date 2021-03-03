@@ -6,33 +6,33 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class SubAccountRefFacade
+ * Class SubAccountRefFacade.
  */
 class SubAccountRefFacade
 {
     /**
-     * @var int $id
+     * @var int
      * @SerializedName("Id")
      * @Type("integer")
      */
     public $id;
 
     /**
-     * @var string $appAccountId
+     * @var string
      * @SerializedName("AppAccountId")
      * @Type("string")
      */
     public $appAccountId;
 
     /**
-     * @var string $displayName
+     * @var string
      * @SerializedName("DisplayName")
      * @Type("string")
      */
     public $displayName;
 
     /**
-     * @var string $href
+     * @var string
      * @SerializedName("Href")
      * @Type("string")
      */

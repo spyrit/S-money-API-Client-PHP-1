@@ -2,11 +2,11 @@
 
 namespace Smoney\Smoney\Client;
 
-use Smoney\Smoney\Client\AbstractClient;
+use Doctrine\Common\Collections\ArrayCollection;
 use Smoney\Smoney\Facade\PaymentFacade;
 
 /**
- * Class PaymentClient
+ * Class PaymentClient.
  */
 class PaymentClient extends AbstractClient
 {
@@ -38,8 +38,7 @@ class PaymentClient extends AbstractClient
     }
 
     /**
-     * @param string        $appUserId
-     * @param PaymentFacade $payment
+     * @param string $appUserId
      *
      * @return PaymentFacade
      */
@@ -47,7 +46,7 @@ class PaymentClient extends AbstractClient
     {
         $uri = 'users/'.$appUserId.'/payments';
         $body = $this->serializer->serialize($payment, 'json');
-        $res = $this->action('POST', $uri, ['body'=>$body]);
+        $res = $this->action('POST', $uri, ['body' => $body]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\PaymentFacade', 'json');
     }

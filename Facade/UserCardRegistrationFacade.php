@@ -6,26 +6,26 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class CardFacade
+ * Class CardFacade.
  */
 class UserCardRegistrationFacade
 {
     /**
-     * @var CardFacade $card
+     * @var CardFacade
      * @SerializedName("Card")
      * @Type("Smoney\Smoney\Facade\CardRegistrationFacade")
      */
     public $card;
 
     /**
-     * @var string $urlReturn
+     * @var string
      * @SerializedName("UrlReturn")
      * @Type("string")
      */
     public $urlReturn;
 
     /**
-     * @var string $urlCallback
+     * @var string
      * @SerializedName("UrlCallback")
      * @Type("string")
      */

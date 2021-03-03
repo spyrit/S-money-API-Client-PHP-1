@@ -2,11 +2,11 @@
 
 namespace Smoney\Smoney\Client;
 
-use Smoney\Smoney\Client\AbstractClient;
+use Doctrine\Common\Collections\ArrayCollection;
 use Smoney\Smoney\Facade\SubAccountFacade;
 
 /**
- * Class SubAccountClient
+ * Class SubAccountClient.
  */
 class SubAccountClient extends AbstractClient
 {
@@ -38,8 +38,7 @@ class SubAccountClient extends AbstractClient
     }
 
     /**
-     * @param string           $appUserId
-     * @param SubAccountFacade $subAccount
+     * @param string $appUserId
      *
      * @return SubAccountFacade
      */
@@ -47,14 +46,13 @@ class SubAccountClient extends AbstractClient
     {
         $uri = 'users/'.$appUserId.'/subaccounts';
         $body = $this->serializer->serialize($subAccount, 'json');
-        $res = $this->action('POST', $uri, ['body'=>$body]);
+        $res = $this->action('POST', $uri, ['body' => $body]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\SubAccountFacade', 'json');
     }
 
     /**
-     * @param string           $appUserId
-     * @param SubAccountFacade $subAccount
+     * @param string $appUserId
      *
      * @return SubAccountFacade
      */
@@ -62,14 +60,14 @@ class SubAccountClient extends AbstractClient
     {
         $uri = 'users/'.$appUserId.'/subaccounts/'.$subAccount->appAccountId;
         $body = $this->serializer->serialize($subAccount, 'json');
-        $res = $this->action('PUT', $uri, ['body'=>$body]);
+        $res = $this->action('PUT', $uri, ['body' => $body]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\SubAccountFacade', 'json');
     }
 
     /**
-     * @param string  $appUserId
-     * @param integer $subAccountId
+     * @param string $appUserId
+     * @param int    $subAccountId
      *
      * @return string
      */

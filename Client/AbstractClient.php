@@ -5,10 +5,9 @@ namespace Smoney\Smoney\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use JMS\Serializer\SerializerInterface;
-use Smoney\Smoney\Client\SmoneyException;
 
 /**
- * Class AbstractClient
+ * Class AbstractClient.
  */
 abstract class AbstractClient
 {
@@ -32,13 +31,10 @@ abstract class AbstractClient
      */
     protected $serializer;
 
-
     /**
-     * @param string              $baseUrl
-     * @param string              $token
-     * @param string              $version
-     * @param ClientInterface     $httpClient
-     * @param SerializerInterface $serializer
+     * @param string $baseUrl
+     * @param string $token
+     * @param string $version
      */
     public function __construct($baseUrl, $token, $version, ClientInterface $httpClient, SerializerInterface $serializer)
     {
@@ -71,7 +67,7 @@ abstract class AbstractClient
         if (!is_array($this->headers)) {
             $this->headers = [];
         }
-        $this->headers['Authorization'] = 'Bearer '. $token .'';
+        $this->headers['Authorization'] = 'Bearer '.$token.'';
 
         return $this;
     }
@@ -83,8 +79,8 @@ abstract class AbstractClient
      */
     public function setVersion($version)
     {
-        $this->headers['Accept'] = 'application/vnd.s-money.'. $version .'+json';
-        $this->headers['Content-Type'] = 'application/vnd.s-money.'. $version .'+json';
+        $this->headers['Accept'] = 'application/vnd.s-money.'.$version.'+json';
+        $this->headers['Content-Type'] = 'application/vnd.s-money.'.$version.'+json';
 
         return $this;
     }
@@ -108,6 +104,7 @@ abstract class AbstractClient
      * @param array  $customHeaders
      *
      * @return string
+     *
      * @throws \Exception|SmoneyException
      */
     protected function action($httpVerb, $uri, $extraParams = [], $customHeaders = [])
@@ -121,7 +118,7 @@ abstract class AbstractClient
 
         foreach ($customHeaders as $key => $value) {
             $options['headers'][$key] = $value;
-            if ($value === null) {
+            if (null === $value) {
                 unset($options['headers'][$key]);
             }
         }
@@ -137,8 +134,6 @@ abstract class AbstractClient
     }
 
     /**
-     * @param RequestException $e
-     *
      * @return SmoneyException|\RuntimeException
      */
     protected function getErrorException(RequestException $e)

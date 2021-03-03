@@ -6,8 +6,7 @@ use Smoney\Smoney\Facade\CardFacade;
 use Smoney\Smoney\Facade\UserCardRegistrationResultFacade;
 
 /**
- * Class CardClient
- * @package Smoney\Smoney\Client
+ * Class CardClient.
  */
 class CardClient extends AbstractClient
 {
@@ -22,6 +21,7 @@ class CardClient extends AbstractClient
 
     /**
      * @param $appCardId
+     *
      * @return CardFacade
      */
     public function getCard($appCardId)
@@ -34,6 +34,7 @@ class CardClient extends AbstractClient
 
     /**
      * @param $appCardId
+     *
      * @return UserCardRegistrationResultFacade
      */
     public function getCardRegistrationResult($appCardId)

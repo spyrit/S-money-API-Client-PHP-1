@@ -5,12 +5,12 @@ namespace Smoney\Smoney\Client;
 use Exception;
 
 /**
- * Class SmoneyException
+ * Class SmoneyException.
  */
 class SmoneyException extends Exception
 {
     /**
-     * @var int $httpCode
+     * @var int
      */
     private $httpCode;
 

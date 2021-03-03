@@ -6,82 +6,82 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class KycFacade
+ * Class KycFacade.
  */
 class KycAttachmentFacade
 {
     /**
-     * @var int $id
+     * @var int
      * @SerializedName("Id")
      * @Type("integer")
      */
     public $id;
 
     /**
-     * @var string $name
+     * @var string
      * @SerializedName("Name")
      * @Type("string")
      */
     public $name;
 
     /**
-     * @var int $type
+     * @var int
      * @SerializedName("Type")
      * @Type("integer")
      */
     public $type;
 
     /**
-     * @var string $contentType
+     * @var string
      * @SerializedName("ContentType")
      * @Type("string")
      */
     public $contentType;
 
     /**
-     * @var integer $size
+     * @var int
      * @SerializedName("Size")
      * @Type("integer")
      */
     public $size;
 
     /**
-     * @var integer $status
+     * @var int
      * @SerializedName("Status")
      * @Type("integer")
      */
     public $status;
 
     /**
-     * @var string $message
+     * @var string
      * @SerializedName("Message")
      * @Type("string")
      */
     public $message;
 
     /**
-     * @var integer $additionalStatus
+     * @var int
      * @SerializedName("AdditionalStatus")
      * @Type("integer")
      */
     public $additionalStatus;
 
     /**
-     * @var DateTime $treatmentDate
+     * @var DateTime
      * @SerializedName("TreatmentDate")
      * @Type("DateTime<'Y-m-d\TH:i:s+'>")
      */
     public $treatmentDate;
 
     /**
-     * @var DateTime $receivedDate
+     * @var DateTime
      * @SerializedName("ReceivedDate")
      * @Type("DateTime<'Y-m-d\TH:i:s+'>")
      */
     public $receivedDate;
 
     /**
-     * @var string $href
+     * @var string
      * @SerializedName("Href")
      * @Type("href")
      */

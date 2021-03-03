@@ -8,21 +8,21 @@ use JMS\Serializer\Annotation\Type;
 class CompanyFacade
 {
     /**
-     * @var string $name
+     * @var string
      * @SerializedName("Name")
      * @Type("string")
      */
     public $name;
 
     /**
-     * @var string $siret
+     * @var string
      * @SerializedName("Siret")
      * @Type("string")
      */
     public $siret;
 
     /**
-     * @var string $nafCode
+     * @var string
      * @SerializedName("NAFCode")
      * @Type("string")
      */

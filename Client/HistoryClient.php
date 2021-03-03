@@ -2,10 +2,8 @@
 
 namespace Smoney\Smoney\Client;
 
-use Smoney\Smoney\Client\AbstractClient;
-
 /**
- * Class HistoryClient
+ * Class HistoryClient.
  */
 class HistoryClient extends AbstractClient
 {

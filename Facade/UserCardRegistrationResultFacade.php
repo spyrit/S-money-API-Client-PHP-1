@@ -8,28 +8,28 @@ use JMS\Serializer\Annotation\Type;
 class UserCardRegistrationResultFacade
 {
     /**
-     * @var string $href
+     * @var string
      * @SerializedName("Href")
      * @Type("string")
      */
     public $href;
 
     /**
-     * @var int $status
+     * @var int
      * @SerializedName("Status")
      * @Type("integer")
      */
     public $status;
 
     /**
-     * @var int $errorCode
+     * @var int
      * @SerializedName("ErrorCode")
      * @Type("integer")
      */
     public $errorCode;
 
     /**
-     * @var ExtraResultsFacade $extraResults
+     * @var ExtraResultsFacade
      * @SerializedName("ExtraResults")
      * @Type("Smoney\Smoney\Facade\ExtraResultsFacade")
      */

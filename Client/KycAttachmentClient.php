@@ -2,18 +2,17 @@
 
 namespace Smoney\Smoney\Client;
 
-use Smoney\Smoney\Client\AbstractClient;
 use Smoney\Smoney\Facade\KycAttachmentFacade;
 
 /**
- * Class KycAttachmentClient
+ * Class KycAttachmentClient.
  */
 class KycAttachmentClient extends AbstractClient
 {
     /**
      * @param string $appUserId
-     * @param array  $files with key as filename and value as file content
-     * 
+     * @param array  $files     with key as filename and value as file content
+     *
      * @return KycFacade
      */
     public function create($appUserId, $files)
@@ -21,18 +20,18 @@ class KycAttachmentClient extends AbstractClient
         $uri = 'users/'.$appUserId.'/kyc';
 
         $multiparts = [];
-        
+
         $i = 1;
         foreach ($files as $key => $value) {
             $multiparts[] = [
                 'name' => 'file-'.$i,
                 'contents' => $value,
-                'filename' => $key
+                'filename' => $key,
             ];
-            $i ++;
+            ++$i;
         }
-        
-        $res = $this->action('POST', $uri, ['multipart' => $multiparts], ['Content-Type'=>null]);
+
+        $res = $this->action('POST', $uri, ['multipart' => $multiparts], ['Content-Type' => null]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\KycFacade', 'json');
     }
@@ -40,7 +39,7 @@ class KycAttachmentClient extends AbstractClient
     /**
      * @param string $appUserId
      * @param string $kycAtatchmentId
-     * 
+     *
      * @return KycAttachmentFacade
      */
     public function get($appUserId, $kycAttachmentId)
@@ -54,7 +53,7 @@ class KycAttachmentClient extends AbstractClient
     /**
      * @param string $appUserId
      * @param string $kycAtatchmentId
-     * 
+     *
      * @return void
      */
     public function delete($appUserId, $kycAttachmentId)

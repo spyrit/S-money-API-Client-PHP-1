@@ -2,44 +2,45 @@
 
 namespace Smoney\Smoney\Facade;
 
+use DateTime;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class PaymentScheduleFacade
+ * Class PaymentScheduleFacade.
  */
 class PaymentScheduleFacade
 {
     /**
-     * @var int $sequenceNumber
+     * @var int
      * @SerializedName("SequenceNumber")
      * @Type("integer")
      */
     public $sequenceNumber;
 
     /**
-     * @var int $amount
+     * @var int
      * @SerializedName("Amount")
      * @Type("integer")
      */
     public $amount;
 
     /**
-     * @var DateTime $date
+     * @var DateTime
      * @SerializedName("Date")
      * @Type("DateTime<'Y-m-d\TH:i:s'>")
      */
     public $date;
 
     /**
-     * @var int $status
+     * @var int
      * @SerializedName("Status")
      * @Type("integer")
      */
     public $status;
 
     /**
-     * @var int $fee
+     * @var int
      * @SerializedName("Fee")
      * @Type("integer")
      */

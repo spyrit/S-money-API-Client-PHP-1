@@ -2,12 +2,13 @@
 
 namespace Smoney\Smoney\Client;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Smoney\Smoney\Facade\UserCardRegistrationFacade;
 use Smoney\Smoney\Facade\UserCardRegistrationResultFacade;
 use Smoney\Smoney\Facade\UserFacade;
 
 /**
- * Class UserClient
+ * Class UserClient.
  */
 class UserClient extends AbstractClient
 {
@@ -52,36 +53,30 @@ class UserClient extends AbstractClient
     }
 
     /**
-     * @param UserFacade $user
-     *
      * @return UserFacade
      */
     public function create(UserFacade $user)
     {
         $uri = 'users';
         $body = $this->serializer->serialize($user, 'json');
-        $res = $this->action('POST', $uri, ['body'=>$body]);
+        $res = $this->action('POST', $uri, ['body' => $body]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\UserFacade', 'json');
     }
 
     /**
-     * @param UserFacade $user
-     *
      * @return UserFacade
      */
     public function update(UserFacade $user)
     {
         $uri = 'users/'.$user->appUserId;
         $body = $this->serializer->serialize($user, 'json');
-        $res = $this->action('PUT', $uri, ['body'=>$body]);
+        $res = $this->action('PUT', $uri, ['body' => $body]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\UserFacade', 'json');
     }
 
     /**
-     * @param UserFacade $user
-     *
      * @return UserFacade
      */
     public function close(UserFacade $user)
@@ -92,21 +87,22 @@ class UserClient extends AbstractClient
     }
 
     /**
-     * @param UserCardRegistrationFacade $userCardRegistrationFacade
      * @param $appUserId
+     *
      * @return UserCardRegistrationResultFacade
      */
     public function registerCardForUser(UserCardRegistrationFacade $userCardRegistrationFacade, $appUserId)
     {
         $uri = "users/{$appUserId}/cards/registrations";
         $body = $this->serializer->serialize($userCardRegistrationFacade, 'json');
-        $res = $this->action('POST', $uri, ['body'=>$body]);
+        $res = $this->action('POST', $uri, ['body' => $body]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\UserCardRegistrationResultFacade', 'json');
     }
 
     /**
      * @param $appUserId
+     *
      * @return array|\JMS\Serializer\scalar|object
      */
     public function getCardsListForUser($appUserId)

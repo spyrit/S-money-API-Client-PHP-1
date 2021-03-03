@@ -6,19 +6,19 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class CardPaymentExtraParametersFacade
+ * Class CardPaymentExtraParametersFacade.
  */
 class CardPaymentExtraParametersFacade
 {
     /**
-     * @var string $profileName
+     * @var string
      * @SerializedName("ProfileName")
      * @Type("string")
      */
     public $profileName;
 
     /**
-     * @var string $systempayLanguage
+     * @var string
      * @SerializedName("SystempayLanguage")
      * @Type("string")
      */

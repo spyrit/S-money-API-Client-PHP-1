@@ -2,15 +2,14 @@
 
 namespace Smoney\Smoney\Client;
 
-use Smoney\Smoney\Client\AbstractClient;
+use Doctrine\Common\Collections\ArrayCollection;
 use Smoney\Smoney\Facade\BankAccountFacade;
 
 /**
- * Class BankAccountClient
+ * Class BankAccountClient.
  */
 class BankAccountClient extends AbstractClient
 {
-
     /**
      * @param string $appUserId
      * @param int    $bankAccountId
@@ -39,8 +38,7 @@ class BankAccountClient extends AbstractClient
     }
 
     /**
-     * @param string            $appUserId
-     * @param BankAccountFacade $bankAccount
+     * @param string $appUserId
      *
      * @return BankAccountFacade
      */
@@ -48,14 +46,13 @@ class BankAccountClient extends AbstractClient
     {
         $uri = 'users/'.$appUserId.'/bankaccounts';
         $body = $this->serializer->serialize($bankAccount, 'json');
-        $res = $this->action('POST', $uri, ['body'=>$body]);
+        $res = $this->action('POST', $uri, ['body' => $body]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\BankAccountFacade', 'json');
     }
 
     /**
-     * @param string            $appUserId
-     * @param BankAccountFacade $bankAccount
+     * @param string $appUserId
      *
      * @return BankAccountFacade
      */
@@ -63,7 +60,7 @@ class BankAccountClient extends AbstractClient
     {
         $uri = 'users/'.$appUserId.'/bankaccounts';
         $body = $this->serializer->serialize($bankAccount, 'json');
-        $res = $this->action('PUT', $uri, ['body'=>$body]);
+        $res = $this->action('PUT', $uri, ['body' => $body]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\BankAccountFacade', 'json');
     }

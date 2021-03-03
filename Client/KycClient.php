@@ -2,18 +2,18 @@
 
 namespace Smoney\Smoney\Client;
 
-use Smoney\Smoney\Client\AbstractClient;
+use Doctrine\Common\Collections\ArrayCollection;
 use Smoney\Smoney\Facade\KycFacade;
 
 /**
- * Class KycClient
+ * Class KycClient.
  */
 class KycClient extends AbstractClient
 {
     /**
      * @param string $appUserId
-     * @param array  $files with key as filename and value as file content
-     * 
+     * @param array  $files     with key as filename and value as file content
+     *
      * @return KycFacade
      */
     public function create($appUserId, $files)
@@ -21,25 +21,25 @@ class KycClient extends AbstractClient
         $uri = 'users/'.$appUserId.'/kyc';
 
         $multiparts = [];
-        
+
         $i = 1;
         foreach ($files as $key => $value) {
             $multiparts[] = [
                 'name' => 'file-'.$i,
                 'contents' => $value,
-                'filename' => $key
+                'filename' => $key,
             ];
-            $i ++;
+            ++$i;
         }
-        
-        $res = $this->action('POST', $uri, ['multipart' => $multiparts], ['Content-Type'=>null]);
+
+        $res = $this->action('POST', $uri, ['multipart' => $multiparts], ['Content-Type' => null]);
 
         return $this->serializer->deserialize($res, 'Smoney\Smoney\Facade\KycFacade', 'json');
     }
 
     /**
      * @param string $appUserId
-     * 
+     *
      * @return ArrayCollection
      */
     public function index($appUserId)
@@ -52,7 +52,7 @@ class KycClient extends AbstractClient
 
     /**
      * @param string $appUserId
-     * 
+     *
      * @return KycFacade
      */
     public function get($appUserId, $kycId)

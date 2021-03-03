@@ -4,43 +4,42 @@ namespace Smoney\Smoney\Facade;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Smoney\Smoney\Facade\VoucherCopyFacade;
 
 /**
- * Class KycFacade
+ * Class KycFacade.
  */
 class KycFacade
 {
     /**
-     * @var int $id
+     * @var int
      * @SerializedName("Id")
      * @Type("integer")
      */
     public $id;
 
     /**
-     * @var DateTime $requestDate
+     * @var DateTime
      * @SerializedName("RequestDate")
      * @Type("DateTime<'Y-m-d\TH:i:s+'>")
      */
     public $requestDate;
 
     /**
-     * @var int $status
+     * @var int
      * @SerializedName("Status")
      * @Type("integer")
      */
     public $status;
 
     /**
-     * @var string $reason
+     * @var string
      * @SerializedName("Reason")
      * @Type("string")
      */
     public $reason;
 
     /**
-     * @var VoucherCopiesFacade $voucherCopies
+     * @var VoucherCopiesFacade
      * @SerializedName("VoucherCopies")
      * @Type("ArrayCollection<Smoney\Smoney\Facade\VoucherCopyFacade>")
      */

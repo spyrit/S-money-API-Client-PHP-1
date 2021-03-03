@@ -2,93 +2,89 @@
 
 namespace Smoney\Smoney\Facade;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Smoney\Smoney\Facade\UserProfileFacade;
-use Smoney\Smoney\Facade\SubAccountFacade;
-use Smoney\Smoney\Facade\BankAccountRefFacade;
-use Smoney\Smoney\Facade\CbCardFacade;
-use Smoney\Smoney\Facade\CompanyFacade;
 
 /**
- * Class UserProfileFacade
+ * Class UserProfileFacade.
  */
 class UserFacade
 {
     /**
-     * @var int $id
+     * @var int
      * @SerializedName("Id")
      * @Type("integer")
      */
     public $id;
 
     /**
-     * @var string $appUserId
+     * @var string
      * @SerializedName("AppUserId")
      * @Type("string")
      */
     public $appUserId;
 
     /**
-     * @var int $role
+     * @var int
      * @SerializedName("Role")
      * @Type("integer")
      */
     public $role;
 
     /**
-     * @var int $type
+     * @var int
      * @SerializedName("Type")
      * @Type("integer")
      */
     public $type;
 
     /**
-     * @var int $amount
+     * @var int
      * @SerializedName("Amount")
      * @Type("integer")
      */
     public $amount;
 
     /**
-    * @var UserProfileFacade $Profile
-    * @SerializedName("Profile")
-    * @Type("Smoney\Smoney\Facade\UserProfileFacade")
-    */
+     * @var UserProfileFacade
+     * @SerializedName("Profile")
+     * @Type("Smoney\Smoney\Facade\UserProfileFacade")
+     */
     public $profile;
 
     /**
-    * @var SubAccountsCollectionFacade $subAccounts
-    * @SerializedName("SubAccounts")
-    * @Type("ArrayCollection<Smoney\Smoney\Facade\SubAccountFacade>")
-    */
+     * @var ArrayCollection<int, SubAccountFacade>
+     * @SerializedName("SubAccounts")
+     * @Type("ArrayCollection<Smoney\Smoney\Facade\SubAccountFacade>")
+     */
     public $subAccounts;
 
     /**
-    * @var BankAccountRefsCollectionFacade $bankAccounts
-    * @SerializedName("BankAccountRef")
-    * @Type("ArrayCollection<Smoney\Smoney\Facade\BankAccountRefFacade>")
-    */
+     * @var ArrayCollection<int, BankAccountFacade>
+     * @SerializedName("BankAccountRef")
+     * @Type("ArrayCollection<Smoney\Smoney\Facade\BankAccountFacade>")
+     */
     public $bankAccounts;
 
     /**
-    * @var CbCardsCollectionFacade $cbCards
-    * @SerializedName("CbCards")
-    * @Type("ArrayCollection<Smoney\Smoney\Facade\CbCardFacade>")
-    */
+     * @var ArrayCollection<int, CbCardFacade>
+     * @SerializedName("CbCards")
+     * @Type("ArrayCollection<Smoney\Smoney\Facade\CbCardFacade>")
+     */
     public $cbCards;
 
     /**
-    * @var int $status
-    * @SerializedName("Status")
-    * @Type("integer")
-    */
+     * @var int
+     * @SerializedName("Status")
+     * @Type("integer")
+     */
     public $status;
 
     /**
-    * @var CompanyFacade $company
-    * @SerializedName("Company")
-    * @Type("Smoney\Smoney\Facade\CompanyFacade")
-    */
+     * @var CompanyFacade
+     * @SerializedName("Company")
+     * @Type("Smoney\Smoney\Facade\CompanyFacade")
+     */
     public $company;
 }

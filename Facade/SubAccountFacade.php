@@ -6,47 +6,47 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 
 /**
- * Class SubAccountFacade
+ * Class SubAccountFacade.
  */
 class SubAccountFacade
 {
     /**
-     * @var int $id
+     * @var int
      * @SerializedName("Id")
      * @Type("integer")
      */
     public $id;
 
     /**
-     * @var string $appAccountId
+     * @var string
      * @SerializedName("AppAccountId")
      * @Type("string")
      */
     public $appAccountId;
 
     /**
-     * @var int $amount
+     * @var int
      * @SerializedName("Amount")
      * @Type("integer")
      */
     public $amount;
 
     /**
-     * @var string $displayName
+     * @var string
      * @SerializedName("DisplayName")
      * @Type("string")
      */
     public $displayName;
 
     /**
-     * @var bool $isDefault
+     * @var bool
      * @SerializedName("IsDefault")
      * @Type("boolean")
      */
     public $isDefault;
 
     /**
-     * @var DateTime $created_at
+     * @var DateTime
      * @SerializedName("CreationDate")
      * @Type("DateTime<'Y-m-d\TH:i:s+'>")
      */
